@@ -1,0 +1,21 @@
+# --- Java ---
+*.class
+*.log
+bin/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+
+# --- Node / Web ---
+node_modules/
+npm-debug.log*
+.env
+.DS_Store
+
+# --- OS ---
+Thumbs.db
