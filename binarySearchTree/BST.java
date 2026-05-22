@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class BST {
     static class Node {
@@ -168,6 +168,20 @@ public class BST {
 
         return root;
     }
+
+
+
+    //CReate a Balanced BST from sorted array
+    public static Node createBST(int arr[] , int st , int end){
+        if(st > end) return null;
+
+        int mid = (st+end)/2;
+        Node node = new Node(arr[mid]);
+        node.left = createBST(arr, st, mid-1);
+        node.right = createBST(arr, mid+1, end);
+
+        return node;
+    }
     public static void main(String[] args) {
         int values[] = { 8, 8, 3, 1, 4, 6, 10, 11, 14 };
         Node root = null;
@@ -210,5 +224,15 @@ public class BST {
 
         mirrorBST(root);
         inOrder(root);
+
+        System.out.println();
+
+
+        int arr[] = {3,5,6,8,10,11,12};
+        Node node = createBST(arr , 0 , arr.length-1);
+        inOrder(node);
+
+
+        
     }
 }
